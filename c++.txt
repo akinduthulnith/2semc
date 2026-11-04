@@ -1,0 +1,184 @@
+cal-------------------------
+
+#include<iostream>
+using namespace std;
+int main(){
+	float n1,n2;
+	char op;
+	cout<<"Enter n1- ";
+	cin>>n1;
+	cout<<"Enter operator- ";
+	cin>>op;
+	cout<<"Enter n2- ";
+	cin>>n2;
+	if(op=='+'){
+		cout<<n1<<"+"<<n2<<"="<<n1+n2;
+	}
+	else if(op=='-'){
+		cout<<n1<<"-"<<n2<<"="<<n1-n2;
+	}
+	else if(op=='*'){
+		cout<<n1<<"*"<<n2<<"="<<n1*n2;
+	}
+	else if(op=='/'){
+		if(n2==0){
+			cout<<"error";
+		}
+		else {
+			cout<<n1<<"/"<<n2<<"="<<n1/n2;
+		}	
+	}
+	else if(op=='%'){
+		if(n2==0){
+			cout<<"error";
+		}
+		else {
+			cout<<n1<<"%"<<n2<<"="<<n1%n2;
+		}	
+	}
+		return 0;
+}
+
+
+triangle -------------------------
+
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b,c;
+	cout<<"Enter number -";
+	cin>>a;
+	cout<<"Enter number -";
+	cin>>b;
+	cout<<"Enter number -";
+	cin>>c;
+	if(a*a+b*b==c*c || a*a+c*c==b*b || b*b+c*c==a*a){
+		cout<<"triangle";
+	}
+	else {
+		cout<<"not triangle";
+	}
+	return 0;
+	
+
+}
+
+2d-------------------------------------
+
+#include<iostream>
+using namespace std;
+int main(){
+	int r,c;
+	cout<<"enter row size";
+	cin>>r;
+	cout<<"Enter colm size ";
+	cin>>c;
+	
+	int a[r][c];
+	for(int i=0;i<r;i++){
+		for(int j=0;j<c;j++){
+			cout<<"Enter value-";
+			cin>>a[i][j];
+		}
+	}
+	
+	for(int i=0;i<r;i++){
+		for(int j=0;j<c;j++){
+			cout<<a[i][j]<<" ";
+		}
+		cout<<endl;		
+	}
+	
+	int rowsum=0;
+	for(int i=0;i<r;i++){
+		rowsum=0;
+		for(int j=0;j<c;j++){
+			rowsum=rowsum+a[i][j];
+		}
+		cout<<"row sum -"<<i<<"= "<<rowsum<<endl;
+	}
+	
+	int colsum=0;
+	for(int j=0;j<c;j++){
+		colsum=0;
+		for(int i=0;i<r;i++){
+			colsum=colsum+a[i][j];
+		}
+		cout<<"col sum -"<<j<<"= "<<colsum<<endl;
+	}
+	
+	
+}
+
+star pattens ---------------------------------
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n = 5;
+
+    cout << "1. Right Triangle\n";
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= i; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+
+    cout << "\n2. Inverted Right Triangle\n";
+    for(int i = n; i >= 1; i--) {
+        for(int j = 1; j <= i; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+
+    cout << "\n3. Pyramid\n";
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n - i; j++) {
+            cout << "  ";
+        }
+        for(int j = 1; j <= 2 * i - 1; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+
+    cout << "\n4. Inverted Pyramid\n";
+    for(int i = n; i >= 1; i--) {
+        for(int j = 1; j <= n - i; j++) {
+            cout << "  ";
+        }
+        for(int j = 1; j <= 2 * i - 1; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+
+    cout << "\n5. Diamond\n";
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n - i; j++) cout << "  ";
+        for(int j = 1; j <= 2 * i - 1; j++) cout << "* ";
+        cout << endl;
+    }
+    for(int i = n - 1; i >= 1; i--) {
+        for(int j = 1; j <= n - i; j++) cout << "  ";
+        for(int j = 1; j <= 2 * i - 1; j++) cout << "* ";
+        cout << endl;
+    }
+
+    cout << "\n6. Hollow Pyramid\n";
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n - i; j++) cout << "  ";
+        for(int j = 1; j <= 2 * i - 1; j++) {
+            if(j == 1 || j == 2 * i - 1 || i == n)
+                cout << "* ";
+            else
+                cout << "  ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
